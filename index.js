@@ -29,6 +29,8 @@ io.on("connection", (socket) => {
 
   socket.on("sendMessage", (message) => {
     console.log("--------->", message);
+    console.log("--------->", socket.id);
+
 
     io.emit("message", message);
   });
