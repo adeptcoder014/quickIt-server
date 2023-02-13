@@ -10,7 +10,7 @@ module.exports = {
       res.status(500).json(error);
     }
   },
-  //===============  POST_ACCOUNTS_HEADS_DEBITS ====================================
+  //===================================================
   postRetailer: async (req, res) => {
     const { name, location } = req.body;
     const data = new model({ name, location });

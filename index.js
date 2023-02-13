@@ -4,6 +4,8 @@ const cors = require("cors");
 require("dotenv").config();
 require("./database");
 const retailerRoute = require("./routes/retailer");
+const userRoute = require("./routes/user");
+
 //=========================================================
 const app = express();
 app.use(
@@ -57,6 +59,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/retailer", retailerRoute);
+app.use("/user", userRoute);
+
 //=========================================================
 
 const port = process.env.PORT;
