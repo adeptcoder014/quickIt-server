@@ -12,8 +12,8 @@ module.exports = {
   },
   //===================================================
   postRetailer: async (req, res) => {
-    const { name, location } = req.body;
-    const data = new model({ name, location });
+    const { name, location, category, mobile } = req.body;
+    const data = new model({ name, location, category, mobile });
     try {
       await data.save();
       res.status(201).json(data);
