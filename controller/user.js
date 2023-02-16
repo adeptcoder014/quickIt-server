@@ -2,7 +2,16 @@ const model = require("../models/user");
 const jwt = require("jsonwebtoken");
 //==================================================
 module.exports = {
-  //===============  Login ====================================
+  //================= GET_USER ==================================
+  getUser: async (req, res) => {
+    const data = model.find({});
+    try {
+      res.status(200).json(data);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  },
+  //===============  LOGIN ====================================
   login: async (req, res) => {
     // Find the user in the list of users
     try {
@@ -23,7 +32,7 @@ module.exports = {
       return res.status(500).json("Something went wrong !");
     }
   },
-  //===================================================
+  //=================== REGISTER ================================
   register: async (req, res) => {
     const { name, email, password } = req.body;
     const data = new model({ name, email, password });
