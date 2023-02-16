@@ -4,7 +4,9 @@ const jwt = require("jsonwebtoken");
 module.exports = {
   //================= GET_USER ==================================
   getUser: async (req, res) => {
-    const data = model.find({});
+    const data = await model.find({});
+
+    console.log(data);
     try {
       res.status(200).json(data);
     } catch (error) {
