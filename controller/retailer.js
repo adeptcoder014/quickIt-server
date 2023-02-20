@@ -5,6 +5,8 @@ module.exports = {
   getRetailer: async (req, res) => {
     try {
       const data = await model.find({});
+
+      console.log("RETAILER -->", data);
       res.status(200).json(data);
     } catch (error) {
       res.status(500).json(error);
