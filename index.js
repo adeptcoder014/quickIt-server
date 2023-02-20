@@ -63,7 +63,7 @@ app.use("/user", userRoute);
 
 //=========================================================
 
-const port = process.env.PORT;
+const port = 5000;
 server.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
